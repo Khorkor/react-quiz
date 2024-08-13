@@ -103,14 +103,21 @@ const App = () => {
   );
 
   useEffect(() => {
-    // fetch("http://localhost:8000/questions")
-    fetch("https://reactquizquestionsapi.netlify.app")
-      .then((res) => res.json())
-      .then((data) => dispatch({ type: "dataReceived", payload: data }))
-      .catch((err) => dispatch({ type: "dataFailed", payload: err.message }));
-  }, []);
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/.netlify/functions/quiz");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data: { questions: IQuestion[] } = await response.json();
+        dispatch({ type: "dataReceived", payload: data.questions });
+      } catch (error) {
+        dispatch({ type: "dataFailed", payload: (error as Error).message });
+      }
+    };
 
-  console.log(questions);
+    fetchData();
+  }, []);
 
   return (
     <>
