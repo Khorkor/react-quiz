@@ -257,3 +257,71 @@ progress {
   font-size: inherit;
   padding: 0.8rem;
 }
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  .main {
+    width: 90%;
+  }
+
+  .app-header {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .app-header img {
+    width: 10rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+  }
+
+  .progress {
+    grid-template-columns: 1fr;
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+  }
+
+  .timer {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+  }
+
+  .result {
+    font-size: 1.8rem;
+  }
+
+  .result span {
+    font-size: 2rem;
+  }
+
+  .highscore {
+    font-size: 1.6rem;
+  }
+
+  .loader-container {
+    font-size: 1.2rem;
+  }
+}

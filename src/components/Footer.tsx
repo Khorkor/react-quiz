@@ -4,7 +4,7 @@ interface FooterComponentProps {
   children: ReactNode;
 }
 const Footer: FC<FooterComponentProps> = ({ children }) => {
-  return <main className="main">{children}</main>;
+  return <main className="footer">{children}</main>;
 };
 
 export default Footer;
