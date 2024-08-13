@@ -103,11 +103,14 @@ const App = () => {
   );
 
   useEffect(() => {
-    fetch("http://localhost:8000/questions")
+    // fetch("http://localhost:8000/questions")
+    fetch("https://reactquizquestionsapi.netlify.app")
       .then((res) => res.json())
       .then((data) => dispatch({ type: "dataReceived", payload: data }))
       .catch((err) => dispatch({ type: "dataFailed", payload: err.message }));
   }, []);
+
+  console.log(questions);
 
   return (
     <>
