@@ -1,19 +1,9 @@
 import { FC } from "react";
-import { Action } from "../types/types";
+import { useQuiz } from "../contexts/QuizContext";
 
-interface FinishScreenProps {
-  points: number;
-  maxPossiblePoints: number;
-  highscore: number;
-  dispatch: (action: Action) => void;
-}
+const FinishScreen: FC = () => {
+  const { points, maxPossiblePoints, highscore, dispatch } = useQuiz();
 
-const FinishScreen: FC<FinishScreenProps> = ({
-  points,
-  maxPossiblePoints,
-  highscore,
-  dispatch,
-}) => {
   const percentage = (points / maxPossiblePoints) * 100;
 
   let emoji;

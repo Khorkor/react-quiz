@@ -17,6 +17,4 @@ export interface IQuestion {
 
 export interface QuestionProps {
   question: IQuestion;
-  dispatch: (action: Action) => void;
-  answer: number | null;
 }

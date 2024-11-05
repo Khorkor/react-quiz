@@ -1,7 +1,9 @@
 import { FC } from "react";
 import { QuestionProps } from "../types/types";
+import { useQuiz } from "../contexts/QuizContext";
 
-const Options: FC<QuestionProps> = ({ question, dispatch, answer }) => {
+const Options: FC<QuestionProps> = ({ question }) => {
+  const { dispatch, answer } = useQuiz();
   const hasAnswered = answer !== null;
   return (
     <div className="options">
